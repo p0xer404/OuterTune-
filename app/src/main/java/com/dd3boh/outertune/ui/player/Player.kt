@@ -144,6 +144,7 @@ import com.dd3boh.outertune.playback.QueueBoard
 import com.dd3boh.outertune.ui.component.BottomSheet
 import com.dd3boh.outertune.ui.component.BottomSheetState
 import com.dd3boh.outertune.ui.component.PlayerSliderTrack
+import com.dd3boh.outertune.ui.component.WaveformVisualizer
 import com.dd3boh.outertune.ui.component.button.ResizableIconButton
 import com.dd3boh.outertune.ui.component.collapsedAnchor
 import com.dd3boh.outertune.ui.component.dismissedAnchor
@@ -827,6 +828,16 @@ fun ControlsContent(
                     }
                 }
             }
+
+            // ── Waveform visualizer ──────────────────────────────────
+            WaveformVisualizer(
+                isPlaying = isPlaying,
+                color = onBackgroundColor,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp)
+                    .padding(horizontal = PlayerHorizontalPadding)
+            )
 
             Slider(
                 value = (sliderPosition ?: position).toFloat(),
